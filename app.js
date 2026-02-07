@@ -114,9 +114,12 @@
   var certContainer = document.getElementById("certifications-list");
   R.certifications.forEach(function (c) {
     var li = document.createElement("li");
+    var nameHtml = c.url
+      ? '<a href="' + c.url + '" target="_blank" rel="noopener" title="Verify credential"><strong>' + c.name + '</strong> <i class="fas fa-external-link-alt" style="font-size:0.75em"></i></a>'
+      : '<strong>' + c.name + '</strong>';
     li.innerHTML =
       '<span class="fa-li"><i class="fas fa-certificate"></i></span>' +
-      "<strong>" + c.name + "</strong> &mdash; " + c.detail;
+      nameHtml + " &mdash; " + c.detail;
     certContainer.appendChild(li);
   });
 
@@ -174,6 +177,17 @@
         excerpt.className = "blog-excerpt";
         excerpt.textContent = b.excerpt;
         div.appendChild(excerpt);
+      }
+      if (b.content && b.content.length > 0) {
+        var contentDiv = document.createElement("div");
+        contentDiv.className = "blog-content";
+        b.content.forEach(function (para) {
+          var p = document.createElement("div");
+          p.className = "blog-paragraph";
+          p.innerHTML = para;
+          contentDiv.appendChild(p);
+        });
+        div.appendChild(contentDiv);
       }
       blogContainer.appendChild(div);
     });

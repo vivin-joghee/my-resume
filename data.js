@@ -19,13 +19,13 @@ const RESUME = {
 
   /* ── Objective ── */
   objective:
-    "Swift Messaging, Data Analysis and Automation Expert with 13 years of banking experience in developing, deploying, configuring, and maintaining Swift and Java applications on-premises and Azure infrastructure. Serving as a Continuous Integration lead for Global Professional Services.",
+    "Swift Messaging, Data Analysis, and Automation specialist with 13 years of banking experience delivering, operating, and optimizing Swift and Java platforms across on-premises and Azure environments. Currently serving as Continuous Integration Lead for Global Professional Services, with a mandate to enhance service delivery productivity through AI-driven automation and analytics. Pursuing an MSc in Financial Technology, strengthening expertise in data analysis, machine learning, and blockchain systems to support next-generation financial services.",
 
   /* ── Experience ── */
   experience: [
     {
       role: "Senior Financial Services Industry Consultant",
-      company: "Swift Terminal Services",
+      company: "SWIFT Terminal Services",
       date: "April 2022 \u2013 Present",
       bullets: [
         "Developed data visualization dashboards and analytical charts using Python and machine-learning techniques to derive insights from customer and operational data.",
@@ -51,7 +51,7 @@ const RESUME = {
     },
     {
       role: "Lead Business Analyst \u2013 Global Swift Messaging",
-      company: "Standard Chartered GBS",
+      company: "Standard Chartered Global Business Services",
       date: "January 2015 \u2013 December 2019",
       bullets: [
         "Developed Python scripts to automate deployment of configurations.",
@@ -83,32 +83,37 @@ const RESUME = {
     "Docker",
     "Cloudbees/Jenkins",
     "Python",
-    "ISO20022",
+    "RHEL/ShellScript",
     "Hardware Security Module",
     "Swift CSP",
     "Swift API",
     "SAA/AMH",
-    "RHEL/ShellScript",
+    "SAG/SNL",
+    "ISO20022",
   ],
 
   /* ── Education ── */
   education: [
-    { name: "MSc / FinTech",           detail: "NTU, Singapore \u2022 2025 \u2013 pursuing" },
-    { name: "BE / Computer Science",   detail: "Anna University, Chennai \u2022 2008 \u2013 2012" },
+    { name: "Master of Science / FinTech",           detail: "NTU, Singapore \u2022 2025 \u2013 pursuing" },
+    { name: "Bachelor of Engineering / Computer Science",   detail: "Anna University, Chennai \u2022 2008 \u2013 2012" },
   ],
 
   /* ── Certifications ── */
+  // Add a "url" field to any certification to make it clickable for verification.
+  // Example: { name: "AWS CLF-C01", detail: "Amazon ...", url: "https://verify-link.com" }
   certifications: [
-    { name: "Blockchain Security by Infosec",             detail: "LinkedIn, Singapore \u2022 2025" },
-    { name: "Flexi Masters / FinTech",                    detail: "NTU, Singapore \u2022 2024 \u2013 2025" },
+    { name: "SWIFTNet Certification",                     detail: "SWIFT, Singapore \u2022 2025" },
+    { name: "Blockchain Security by Infosec",             detail: "LinkedIn, Singapore \u2022 2025", url: "https://www.linkedin.com/learning/certificates/486869b9e46db6d1cc7feb6508082aee9b996249f9a8f98413fe7502a45cd72e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bd2e7OQnYQxSN3rxxJoWBJw%3D%3D&accountId=0&u=0&success=true&authUUID=%2BUj%2FhddnRVOxNKsPEZKJGg%3D%3D" },
+    { name: "Flexi Masters in FinTech",                   detail: "NTU, Singapore \u2022 2024 \u2013 2025" },
     { name: "Python For Data Analysis",                   detail: "NTU, Singapore \u2022 2024 \u2013 2025" },
     { name: "Machine Learning in Finance",                detail: "NTU, Singapore \u2022 2024" },
     { name: "Blockchain Systems Concepts and Principles", detail: "NTU, Singapore \u2022 2024" },
-    { name: "Python, PCEP-30-02",                         detail: "Singapore \u2022 2024" },
-    { name: "AWS CLF-C01",                                detail: "Singapore \u2022 2023" },
-    { name: "ICAgile Certified Professional",             detail: "Singapore \u2022 2023" },
-    { name: "LPI 010-160",                                detail: "Singapore \u2022 2023" },
-    { name: "Microsoft Azure AZ900",                      detail: "Chennai \u2022 2021" },
+    { name: "Python, PCEP-30-02",                         detail: "Python Institute, Singapore \u2022 2024", url: "https://verify.openedg.org/?id=1sVa.nxUz.GTQ3" },
+    { name: "AWS CLF-C01",                                detail: "Amazon, Singapore \u2022 2023" },
+    { name: "ICAgile Certified Professional",             detail: "ICAgile, Singapore \u2022 2023", url: "https://www.icagile.com/credentials/ab638407-77e3-469d-97a9-ef83f6ca3ea7" },
+    { name: "LPI 010-160",                                detail: "Linux Professional Institute, Singapore \u2022 2023", url: "https://cs.lpi.org/caf/Xamman/certification/verify/LPI000553696/86crxggu3e" },
+    { name: "Microsoft Azure AZ900",                      detail: "Microsoft, Chennai \u2022 2021", url: "https://www.credly.com/badges/52779edd-572b-4a5a-8dbb-b84c982d206f?source=linked_in_profile" },
+    { name: "Certified Scrum Master",                     detail: "ScrumAlliance, Chennai \u2022 2017" },
   ],
 
   /* ── Awards ── */
@@ -122,24 +127,60 @@ const RESUME = {
   /* ── Volunteer ── */
   volunteer: [
     { name: "Volunteer Lead",                        detail: "NEA, Singapore" },
+    { name: "Fundraising Volunteer",                 detail: "Touch Community Services, Singapore" },
+    { name: "Basic First AID + AED",      detail: "Singapore Red Cross Society, Singapore" },
+    { name: "Psychological First Aid",    detail: "Singapore Red Cross Society, Singapore" },
+    { name: "Fundraising Volunteer",      detail: "Greenpeace, India" },
+  ],
+
+    /* ── Football ── */
+  football: [
     { name: "Singapore Coach Excellence Level 1",    detail: "SG Sport, Singapore" },
-    { name: "Football Association of Singapore, ICC", detail: "FAS, Singapore" },
+    { name: "Football Association of Singapore, Introduction to Coaching Course", detail: "FAS, Singapore" },
+    { name: "Introduction to Football Analytics", detail: "hudlstatsbomb, Singapore" },
+    { name: "Foundational Sport Science",    detail: "Sport Singapore, Singapore" },
+    { name: "Understanding Safe Sport as a Coach",    detail: "Safe Sport Commission, Singapore" },
+    { name: "Values and Principles in Sport",    detail: "Sport Singapore, Singapore" },
   ],
 
   /* ── Books ── */
   books: [
-    { title: "Rework",             author: "Founders of 37signals" },
-    { title: "Inventing Bitcoin",  author: "Yan Pritzker" },
-    { title: "Read, Write, Own",   author: "Chris Dixon" },
-    { title: "Rinsed",            author: "Geoff White" },
-    { title: "Mastering Ethereum", author: "Various authors" },
-    { title: "Empire of AI",      author: "Karen Hao" },
+    { title: "Rework",                  author: "Founders of 37signals" },
+    { title: "Empire of AI",            author: "Karen Hao" },
+    { title: "Inventing Bitcoin",       author: "Yan Pritzker" },
+    { title: "The Bitcoin Standard",    author: "Saifedean Ammous" },
+    { title: "Mastering Ethereum",      author: "Various authors" },
+    { title: "Read, Write, Own",        author: "Chris Dixon" },
+    { title: "Rinsed",                  author: "Geoff White" },
+    { title: "Outliners",               author: "Malcolm Gladwell" },
+    { title: "Fintech Wars",            author: "James da Costa" },
+    { title: "The Psychology of Money", author: "Morgan Housel" },
+    { title: "Same as Ever",            author: "Morgan Housel" },
+    { title: "Clear Thinking",          author: "Shane Parrish" },
+    { title: "Win Every Argument",      author: "Mehdi Hasan" },
+    { title: "The Wisdom We’ve Lost",   author: "Thomas R. Williams" },
+    { title: "The Anthology of Balaji", author: "Balaji Srinivasan" },
+    { title: "Think and Grow Rich",     author: "Napoleon Hill" },
+    { title: "When Breath Becomes Air", author: "Paul Kalanithi" },
+
+
   ],
 
   /* ── Blogs ── */
-  // Add your blog posts here. Each entry has a title, url, date, and excerpt.
   blogs: [
-    // Example:
-    // { title: "My First Blog Post", url: "https://yourblog.com/post-1", date: "January 2025", excerpt: "A short description of the blog post." },
+    {
+      title: "How big are crypto hacks?",
+      date: "02 January 2026",
+      content: [
+        'In <em>RINSED</em>, Geoff White makes a powerful point. Laundering is not a side activity. It is the hidden system that makes crime profitable. No crime truly succeeds unless the money can be moved, disguised, and used.',
+        'Money laundering typically follows three stages:',
+        '<ul><li><strong>Placement</strong> where illicit funds enter the financial system</li><li><strong>Layering</strong> where transactions are layered to obscure the trail</li><li><strong>Integration</strong> where funds re-enter the legitimate economy</li></ul>',
+        'In <em>RINSED</em>, money laundering is portrayed as:',
+        '<ul><li>The common language spoken by all criminal enterprises</li><li>The quiet enabler that connects street-level crime to global finance</li><li>The reason criminals care less about stealing money and more about moving it</li></ul>',
+        'When this process combines with complex crypto infrastructure and human trust, scams scale fast. Crypto crime is not niche. It is systemic, well organized, and evolving faster than most defenses.',
+        'According to the latest Chainalysis report, more than $3.4 billion in crypto was stolen in 2025, with single incidents accounting for billions on their own. Tens of thousands of individual victims were affected, showing that both institutions and everyday users are targets.',
+        '<strong>Report:</strong> <a href="https://www.chainalysis.com/blog/crypto-hacking-stolen-funds-2026/" target="_blank">Chainalysis — Crypto Hacking Stolen Funds 2026</a>',
+      ],
+    },
   ],
 };
