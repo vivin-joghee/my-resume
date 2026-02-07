@@ -165,9 +165,12 @@
   var bookContainer = document.getElementById("books-list");
   R.books.forEach(function (b) {
     var li = document.createElement("li");
+    var titleHtml = b.link
+      ? '<a href="' + b.link + '" target="_blank" rel="noopener"><strong>' + b.title + '</strong> <i class="fas fa-external-link-alt" style="font-size:0.75em"></i></a>'
+      : '<strong>' + b.title + '</strong>';
     li.innerHTML =
       '<span class="fa-li"><i class="fas fa-book"></i></span>' +
-      "<strong>" + b.title + "</strong> &mdash; " + b.author;
+      titleHtml + " &mdash; " + b.author;
     bookContainer.appendChild(li);
   });
 
