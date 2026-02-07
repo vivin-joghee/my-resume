@@ -137,11 +137,29 @@
   var volContainer = document.getElementById("volunteer-list");
   R.volunteer.forEach(function (v) {
     var li = document.createElement("li");
+    var nameHtml = v.url
+      ? '<a href="' + v.url + '" target="_blank" rel="noopener" title="View certificate"><strong>' + v.name + '</strong> <i class="fas fa-external-link-alt" style="font-size:0.75em"></i></a>'
+      : '<strong>' + v.name + '</strong>';
     li.innerHTML =
       '<span class="fa-li"><i class="fas fa-hands-helping"></i></span>' +
-      "<strong>" + v.name + "</strong> &mdash; " + v.detail;
+      nameHtml + " &mdash; " + v.detail;
     volContainer.appendChild(li);
   });
+
+  /* ── FOOTBALL ── */
+  var footContainer = document.getElementById("football-list");
+  if (R.football && footContainer) {
+    R.football.forEach(function (f) {
+      var li = document.createElement("li");
+      var nameHtml = f.url
+        ? '<a href="' + f.url + '" target="_blank" rel="noopener" title="View certificate"><strong>' + f.name + '</strong> <i class="fas fa-external-link-alt" style="font-size:0.75em"></i></a>'
+        : '<strong>' + f.name + '</strong>';
+      li.innerHTML =
+        '<span class="fa-li"><i class="fas fa-futbol"></i></span>' +
+        nameHtml + " &mdash; " + f.detail;
+      footContainer.appendChild(li);
+    });
+  }
 
   /* ── BOOKS ── */
   var bookContainer = document.getElementById("books-list");

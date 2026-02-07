@@ -126,21 +126,21 @@ const RESUME = {
 
   /* ── Volunteer ── */
   volunteer: [
-    { name: "Volunteer Lead",                        detail: "NEA, Singapore" },
+    { name: "Volunteer Lead",                        detail: "NEA, Singapore", url: "volunteer/Vivin_Joghee_NEA_Certificate_of_Appointment.pdf" },
     { name: "Fundraising Volunteer",                 detail: "Touch Community Services, Singapore" },
-    { name: "Basic First AID + AED",      detail: "Singapore Red Cross Society, Singapore" },
-    { name: "Psychological First Aid",    detail: "Singapore Red Cross Society, Singapore" },
+    { name: "Basic First AID + AED",      detail: "Singapore Red Cross Society, Singapore", url: "volunteer/BFA_Cert.png" },
+    { name: "Psychological First Aid",    detail: "Singapore Red Cross Society, Singapore", url: "volunteer/PFA_Certification.pdf" },
     { name: "Fundraising Volunteer",      detail: "Greenpeace, India" },
   ],
 
     /* ── Football ── */
   football: [
-    { name: "Singapore Coach Excellence Level 1",    detail: "SG Sport, Singapore" },
-    { name: "Football Association of Singapore, Introduction to Coaching Course", detail: "FAS, Singapore" },
-    { name: "Introduction to Football Analytics", detail: "hudlstatsbomb, Singapore" },
-    { name: "Foundational Sport Science",    detail: "Sport Singapore, Singapore" },
-    { name: "Understanding Safe Sport as a Coach",    detail: "Safe Sport Commission, Singapore" },
-    { name: "Values and Principles in Sport",    detail: "Sport Singapore, Singapore" },
+    { name: "Singapore Coach Excellence Level 1",    detail: "SG Sport, Singapore", url: "football/Vivin_Joghee_Singapore_Coach_Excellence_Theory_Level1.pdf" },
+    { name: "Football Association of Singapore, Introduction to Coaching Course", detail: "FAS, Singapore", url: "football/Vivin_Joghee_FAS_ICC.pdf" },
+    { name: "Introduction to Football Analytics", detail: "hudlstatsbomb, Singapore", url: "football/Introduction_to_Football_Analytics.pdf" },
+    { name: "Foundational Sport Science",    detail: "Sport Singapore, Singapore", url: "football/Vivin_Joghee_Foundational_Sport_Science.pdf" },
+    { name: "Understanding Safe Sport as a Coach",    detail: "Safe Sport Commission, Singapore", url: "football/Vivin_Joghee_Safe_Sport_and_Sport_Safety_SGC-1.pdf" },
+    { name: "Values and Principles in Sport",    detail: "Sport Singapore, Singapore", url: "football/Vivin_Joghee_Values_and_Principles_in_Sport_SGC-1.pdf" },
   ],
 
   /* ── Books ── */
