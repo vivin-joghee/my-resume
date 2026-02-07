@@ -135,4 +135,11 @@ const RESUME = {
     { title: "Mastering Ethereum", author: "Various authors" },
     { title: "Empire of AI",      author: "Karen Hao" },
   ],
+
+  /* ── Blogs ── */
+  // Add your blog posts here. Each entry has a title, url, date, and excerpt.
+  blogs: [
+    // Example:
+    // { title: "My First Blog Post", url: "https://yourblog.com/post-1", date: "January 2025", excerpt: "A short description of the blog post." },
+  ],
 };

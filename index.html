@@ -3,71 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
+  <title>Resume - Vivin Joghee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=Muli:wght@400;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
 
-    <!-- HEADER -->
-    <header class="header">
-      <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-      <div class="header-text">
-        <h1 id="name"></h1>
-        <p id="title" class="subtitle"></p>
-        <div id="contact" class="contact-row"></div>
+  <!-- SIDEBAR NAV -->
+  <nav id="sidebar">
+    <div class="sidebar-inner">
+      <a class="sidebar-brand" href="#about">
+        <img src="profile.jpg" alt="Profile Photo" class="sidebar-photo">
+      </a>
+      <ul class="nav-list" id="nav-list">
+        <li><a class="nav-link active" href="#about">About</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li><a class="nav-link" href="#awards">Awards</a></li>
+        <li><a class="nav-link" href="#volunteer">Volunteer</a></li>
+        <li><a class="nav-link" href="#books">Books</a></li>
+        <li><a class="nav-link" href="#blogs">Blogs</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- ABOUT -->
+    <section id="about" class="resume-section">
+      <div class="resume-section-content">
+        <h1 class="name-heading">Vivin <span class="text-primary">Joghee</span></h1>
+        <div class="subheading" id="contact-line"></div>
+        <p class="lead" id="objective"></p>
+        <div class="social-icons" id="social-icons"></div>
       </div>
-    </header>
-
-    <!-- OBJECTIVE -->
-    <section class="section">
-      <h2>Objective</h2>
-      <p id="objective"></p>
     </section>
+
+    <hr class="section-divider">
 
     <!-- EXPERIENCE -->
-    <section class="section">
-      <h2>Experience</h2>
-      <div id="experience"></div>
+    <section id="experience" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Experience</h2>
+        <div id="experience-list"></div>
+      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section">
-      <h2>Skills</h2>
-      <div id="skills" class="tags"></div>
-    </section>
+    <hr class="section-divider">
 
     <!-- EDUCATION -->
-    <section class="section">
-      <h2>Education</h2>
-      <div id="education"></div>
+    <section id="education" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Education</h2>
+        <div id="education-list"></div>
+      </div>
     </section>
+
+    <hr class="section-divider">
+
+    <!-- SKILLS -->
+    <section id="skills" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Skills</h2>
+        <div id="skills-list"></div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
 
     <!-- CERTIFICATIONS -->
-    <section class="section">
-      <h2>Certifications</h2>
-      <div id="certifications"></div>
+    <section id="certifications" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Certifications</h2>
+        <ul class="fa-ul" id="certifications-list"></ul>
+      </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- AWARDS -->
-    <section class="section">
-      <h2>Awards</h2>
-      <div id="awards"></div>
+    <section id="awards" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Awards</h2>
+        <ul class="fa-ul" id="awards-list"></ul>
+      </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- VOLUNTEER -->
-    <section class="section">
-      <h2>Volunteer</h2>
-      <div id="volunteer"></div>
+    <section id="volunteer" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Volunteer</h2>
+        <ul class="fa-ul" id="volunteer-list"></ul>
+      </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- BOOKS -->
-    <section class="section">
-      <h2>Books &mdash; 2025</h2>
-      <ul id="books" class="books-list"></ul>
+    <section id="books" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Books &mdash; 2025</h2>
+        <ul class="fa-ul" id="books-list"></ul>
+      </div>
     </section>
 
-  </div>
+    <hr class="section-divider">
+
+    <!-- BLOGS -->
+    <section id="blogs" class="resume-section">
+      <div class="resume-section-content">
+        <h2 class="section-heading">Blogs</h2>
+        <div id="blogs-list"></div>
+      </div>
+    </section>
+
+  </main>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

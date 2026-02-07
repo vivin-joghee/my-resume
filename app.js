@@ -1,107 +1,216 @@
 /* ── Render resume from RESUME object in data.js ── */
 
 (function () {
-  const R = RESUME;
+  var R = RESUME;
 
-  /* Helper: create element */
-  function el(tag, cls, html) {
-    const e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (html) e.innerHTML = html;
-    return e;
-  }
+  /* ── ABOUT / CONTACT LINE ── */
+  var contactParts = [];
+  var socialContainer = document.getElementById("social-icons");
 
-  /* ── Header ── */
-  document.getElementById("name").textContent = R.name;
-  document.getElementById("title").textContent = R.title;
-
-  const contactRow = document.getElementById("contact");
-  const icons = {
-    email: "\u2709",
-    phone: "\u260E",
-    linkedin: "in",
-    github: "\u2731",
-    location: "\u25CB",
-  };
   R.contact.forEach(function (c) {
-    const span = el("span", "contact-item");
-    const icon = icons[c.type] || "";
-    if (c.url) {
-      span.innerHTML = icon + ' <a href="' + c.url + '" target="_blank">' + c.value + "</a>";
+    if (c.type === "location") {
+      contactParts.push(c.value);
+    } else if (c.type === "phone") {
+      contactParts.push(c.value);
     } else if (c.type === "email") {
-      span.innerHTML = icon + ' <a href="mailto:' + c.value + '">' + c.value + "</a>";
-    } else {
-      span.textContent = icon + " " + c.value;
+      contactParts.push('<a href="mailto:' + c.value + '">' + c.value + "</a>");
     }
-    contactRow.appendChild(span);
+
+    // Social icons
+    var iconMap = {
+      linkedin: "fab fa-linkedin-in",
+      github: "fab fa-github",
+      email: "fas fa-envelope",
+    };
+    if (iconMap[c.type] && c.type !== "email") {
+      var a = document.createElement("a");
+      a.className = "social-icon";
+      a.href = c.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = '<i class="' + iconMap[c.type] + '"></i>';
+      socialContainer.appendChild(a);
+    }
+    if (c.type === "email") {
+      var a2 = document.createElement("a");
+      a2.className = "social-icon";
+      a2.href = "mailto:" + c.value;
+      a2.innerHTML = '<i class="fas fa-envelope"></i>';
+      socialContainer.appendChild(a2);
+    }
   });
 
-  /* ── Objective ── */
+  document.getElementById("contact-line").innerHTML = contactParts.join(" &middot; ");
+
+  /* ── OBJECTIVE ── */
   document.getElementById("objective").textContent = R.objective;
 
-  /* ── Experience ── */
-  const expContainer = document.getElementById("experience");
+  /* ── EXPERIENCE ── */
+  var expContainer = document.getElementById("experience-list");
   R.experience.forEach(function (job) {
-    const div = el("div", "exp-item");
-    const header = el("div", "exp-header");
-    header.appendChild(el("span", "exp-role", job.role));
-    header.appendChild(el("span", "exp-date", job.date));
-    div.appendChild(header);
-    div.appendChild(el("div", "exp-company", job.company));
-    const ul = el("ul", "exp-bullets");
+    var div = document.createElement("div");
+    div.className = "resume-item";
+    var content = document.createElement("div");
+    content.className = "resume-item-content";
+    var h3 = document.createElement("h3");
+    h3.textContent = job.role;
+    content.appendChild(h3);
+    var sub = document.createElement("div");
+    sub.className = "item-subtitle";
+    sub.textContent = job.company;
+    content.appendChild(sub);
+    var ul = document.createElement("ul");
     job.bullets.forEach(function (b) {
-      ul.appendChild(el("li", "", b));
+      var li = document.createElement("li");
+      li.textContent = b;
+      ul.appendChild(li);
     });
-    div.appendChild(ul);
+    content.appendChild(ul);
+    var dateDiv = document.createElement("div");
+    dateDiv.className = "resume-item-date";
+    dateDiv.textContent = job.date;
+    div.appendChild(content);
+    div.appendChild(dateDiv);
     expContainer.appendChild(div);
   });
 
-  /* ── Skills ── */
-  const skillsContainer = document.getElementById("skills");
-  R.skills.forEach(function (s) {
-    skillsContainer.appendChild(el("span", "tag", s));
-  });
-
-  /* ── Education ── */
-  const eduContainer = document.getElementById("education");
+  /* ── EDUCATION ── */
+  var eduContainer = document.getElementById("education-list");
   R.education.forEach(function (e) {
-    const row = el("div", "edu-item");
-    row.appendChild(el("span", "edu-name", e.name));
-    row.appendChild(el("span", "edu-detail", e.detail));
-    eduContainer.appendChild(row);
+    var div = document.createElement("div");
+    div.className = "resume-item";
+    var content = document.createElement("div");
+    content.className = "resume-item-content";
+    var h3 = document.createElement("h3");
+    h3.textContent = e.name;
+    content.appendChild(h3);
+    var sub = document.createElement("div");
+    sub.className = "item-subtitle";
+    sub.textContent = e.detail;
+    content.appendChild(sub);
+    div.appendChild(content);
+    eduContainer.appendChild(div);
   });
 
-  /* ── Certifications ── */
-  const certContainer = document.getElementById("certifications");
+  /* ── SKILLS ── */
+  var skillsContainer = document.getElementById("skills-list");
+  var skillsDiv = document.createElement("div");
+  skillsDiv.className = "skills-category";
+  var skillsH3 = document.createElement("h3");
+  skillsH3.textContent = "Tools & Technologies";
+  skillsDiv.appendChild(skillsH3);
+  var tagList = document.createElement("div");
+  tagList.className = "skills-list";
+  R.skills.forEach(function (s) {
+    var span = document.createElement("span");
+    span.className = "skill-tag";
+    span.textContent = s;
+    tagList.appendChild(span);
+  });
+  skillsDiv.appendChild(tagList);
+  skillsContainer.appendChild(skillsDiv);
+
+  /* ── CERTIFICATIONS ── */
+  var certContainer = document.getElementById("certifications-list");
   R.certifications.forEach(function (c) {
-    const row = el("div", "cert-item");
-    row.appendChild(el("span", "cert-name", c.name));
-    row.appendChild(el("span", "cert-detail", c.detail));
-    certContainer.appendChild(row);
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<span class="fa-li"><i class="fas fa-certificate"></i></span>' +
+      "<strong>" + c.name + "</strong> &mdash; " + c.detail;
+    certContainer.appendChild(li);
   });
 
-  /* ── Awards ── */
-  const awardContainer = document.getElementById("awards");
+  /* ── AWARDS ── */
+  var awardContainer = document.getElementById("awards-list");
   R.awards.forEach(function (a) {
-    const row = el("div", "award-item");
-    row.appendChild(el("span", "award-name", a.name));
-    row.appendChild(el("span", "award-detail", a.detail));
-    awardContainer.appendChild(row);
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<span class="fa-li"><i class="fas fa-trophy"></i></span>' +
+      "<strong>" + a.name + "</strong> &mdash; " + a.detail;
+    awardContainer.appendChild(li);
   });
 
-  /* ── Volunteer ── */
-  const volContainer = document.getElementById("volunteer");
+  /* ── VOLUNTEER ── */
+  var volContainer = document.getElementById("volunteer-list");
   R.volunteer.forEach(function (v) {
-    const row = el("div", "vol-item");
-    row.appendChild(el("span", "vol-name", v.name));
-    row.appendChild(el("span", "vol-detail", v.detail));
-    volContainer.appendChild(row);
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<span class="fa-li"><i class="fas fa-hands-helping"></i></span>' +
+      "<strong>" + v.name + "</strong> &mdash; " + v.detail;
+    volContainer.appendChild(li);
   });
 
-  /* ── Books ── */
-  const booksList = document.getElementById("books");
+  /* ── BOOKS ── */
+  var bookContainer = document.getElementById("books-list");
   R.books.forEach(function (b) {
-    const li = el("li", "", "<strong>" + b.title + "</strong> <span class='book-author'>\u2014 " + b.author + "</span>");
-    booksList.appendChild(li);
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<span class="fa-li"><i class="fas fa-book"></i></span>' +
+      "<strong>" + b.title + "</strong> &mdash; " + b.author;
+    bookContainer.appendChild(li);
+  });
+
+  /* ── BLOGS ── */
+  var blogContainer = document.getElementById("blogs-list");
+  if (R.blogs && R.blogs.length > 0) {
+    R.blogs.forEach(function (b) {
+      var div = document.createElement("div");
+      div.className = "blog-item";
+      var h3 = document.createElement("h3");
+      if (b.url) {
+        h3.innerHTML = '<a href="' + b.url + '" target="_blank">' + b.title + "</a>";
+      } else {
+        h3.textContent = b.title;
+      }
+      div.appendChild(h3);
+      if (b.date) {
+        var dateP = document.createElement("div");
+        dateP.className = "blog-date";
+        dateP.textContent = b.date;
+        div.appendChild(dateP);
+      }
+      if (b.excerpt) {
+        var excerpt = document.createElement("p");
+        excerpt.className = "blog-excerpt";
+        excerpt.textContent = b.excerpt;
+        div.appendChild(excerpt);
+      }
+      blogContainer.appendChild(div);
+    });
+  } else {
+    var placeholder = document.createElement("p");
+    placeholder.className = "blog-placeholder";
+    placeholder.textContent = "Coming soon...";
+    blogContainer.appendChild(placeholder);
+  }
+
+  /* ── SIDEBAR NAV — scroll spy & mobile toggle ── */
+  var sections = document.querySelectorAll(".resume-section");
+  var navLinks = document.querySelectorAll(".nav-link");
+
+  // Scroll spy
+  window.addEventListener("scroll", function () {
+    var scrollPos = window.scrollY + 100;
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
+        navLinks.forEach(function (l) { l.classList.remove("active"); });
+        var active = document.querySelector('.nav-link[href="#' + sec.id + '"]');
+        if (active) active.classList.add("active");
+      }
+    });
+  });
+
+  // Mobile toggle
+  var toggle = document.getElementById("navToggle");
+  var sidebar = document.getElementById("sidebar");
+  toggle.addEventListener("click", function () {
+    sidebar.classList.toggle("open");
+  });
+
+  // Close sidebar on link click (mobile)
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      sidebar.classList.remove("open");
+    });
   });
 })();
