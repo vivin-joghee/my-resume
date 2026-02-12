@@ -59,7 +59,9 @@ a:hover { color: var(--primary-dark); }
   height: 10rem;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .nav-list {
