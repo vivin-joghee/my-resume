@@ -169,6 +169,46 @@ const RESUME = {
   /* ── Blogs ── */
   blogs: [
     {
+      title: "What is Artificial General Intelligence (AGI)?",
+      slug: "agi",
+      date: "12 February 2026",
+      intro: "Is Compute the only way to attain AGI?",
+      content: [
+        'OpenAI has described AGI as "a highly autonomous system that outperforms humans at most economically valuable work," one that will somehow "elevate humanity by increasing abundance, turbocharging the economy, and aiding in the discovery of new scientific knowledge that changes the limits of possibility."',
+        '<img src="blogs/images/agi/empire-of-ai.png" alt="Empire of AI">',
+        'The book <em>Empire of AI</em> traces the global race toward AGI — from the immense computing power and vast training data that fuel large models, to the content moderation networks in Kenya, and finally to the environmental consequences of data centers and the growing water crisis that sustains this digital empire.',
+        'This book is a fascinating read.',
+        '<strong>Source:</strong> <a href="https://karendhao.com/" target="_blank">karendhao.com</a>',
+      ],
+    },
+    {
+      title: "What is the Byzantine Generals Problem?",
+      slug: "byzantine-generals-problem",
+      date: "12 February 2026",
+      intro: "Why it is difficult to control the blockchain network?",
+      content: [
+        'The Byzantine Empire was infamous for its complex bureaucracy, shifting alliances, and constant intrigue. A general there feared not just the enemy beyond the walls but betrayal within. Orders could be forged, messengers bribed, and allies turn traitor.',
+        '<img src="blogs/images/byzantine/byzantine-generals-problem.png" alt="Byzantine Generals Problem">',
+        'This ancient drama became the perfect metaphor for a modern computing puzzle. How can a network of independent nodes agree on a single truth when some may lie, fail, or act selfishly? That is the Byzantine Generals Problem, and every decentralized blockchain must solve it.',
+        'In this analogy, generals are nodes and their collective decision to attack or retreat represents the state of the network. A Byzantine failure happens when the system cannot tell honest participants from malicious ones, confusing valid and fraudulent transactions. To stay secure, a majority must reach consensus — and that is where consensus mechanisms come in.',
+        '<ul><li><strong>Proof of Work (Bitcoin):</strong> Miners solve computational puzzles to prove real work. Energy and hardware costs make cheating irrational, creating Byzantine Fault Tolerance through economics.</li><li><strong>Proof of Stake (Ethereum):</strong> Validators lock up capital as collateral. Misbehavior can lead to slashing, causing dishonest participants to lose their stake.</li></ul>',
+        'Both systems achieve practical Byzantine Fault Tolerance by aligning economic incentives with honest participation.',
+        'At its core, Byzantine Fault Tolerance keeps public blockchains corruption resistant — a digital echo of ancient intrigue turned into mathematical order.',
+      ],
+    },
+    {
+      title: "What is a Birthday Attack?",
+      slug: "birthday-attack",
+      date: "12 February 2026",
+      intro: "Bitcoin is back at an all-time high — a good time to revisit the cryptography that keeps it secure: SHA-256.",
+      content: [
+        'The birthday attack comes from the birthday paradox: in a group of just 23 people, there\'s a 50% chance two share the same birthday. The same math applies to hash functions in which probability of two inputs producing the same hash (a collision) rises much faster than our intuition expects.',
+        '<img src="blogs/images/birthday-attack/birthday-attack.png" alt="Birthday Attack">',
+        'For a hash function with n bits, a collision can be expected after roughly 2^(n/2) attempts.',
+        'SHA-256 outputs 256 bits, so a brute-force collision (birthday) attack needs on the order of 2^128 operations, which is astronomically large with today\'s hardware.',
+      ],
+    },
+    {
       title: "How big are crypto hacks?",
       slug: "crypto-hacks",
       date: "02 January 2026",
